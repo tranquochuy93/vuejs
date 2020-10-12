@@ -97,3 +97,41 @@ var app = new Vue({
    }
 });
 ```
+#### Truyền dữ liệu giữa các components
+1) Parent component -> child component
+- Sử dụng props
+```html
+<template>
+  <div id="app">
+    <ComponentFirst msg="Welcome to Your Vue.js App"/>
+    //OR <ComponentFirst :msg="Welcome to Your Vue.js App">
+    //OR <ComponentFirst v-bind:msg="Welcome to Your Vue.js App"></ComponentFirst>
+  </div>
+</template>
+
+<script>
+import ComponentFirst from './components/componentFirst';
+
+export default {
+  name: 'App',
+  components: {
+    ComponentFirst
+  }
+}
+</script>
+```
+
+```html
+<template>
+    <div>{{msg}}</div>
+</template>
+
+<script>
+export default {
+    name: "Component first",
+    props: {
+        msg: String
+    }
+};
+</script>
+```
