@@ -22,7 +22,7 @@ var vm = new Vue({
 ```
 
 #### Computed  vs method, watcher
-```
+```html
 <div id="app">
     <h1 class="text-red">{{ convertToUpper() }}</h1>
 </div>
@@ -45,7 +45,7 @@ var vm = new Vue({
     }
     });
 </script>
-html
+
 ```
 | Computed   | method
 |--------------|-------|
