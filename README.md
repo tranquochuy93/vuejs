@@ -137,3 +137,68 @@ export default {
 ```
 - props chỉ được truyền một chiều từ con xuống cha – không có chiều ngược lại
  - Vì thằng cha có thể cũng truyền data này cho nhiều thằng con nữa, mà một thằng con lại có quyền thay đổi data của cha thì không được
+ 
+ 2. child component -> parent component
+ - Sử dụng $emit()
+ ```html
+<template>
+    <div id="app">
+        <ComponentFirst @inputData="updateMessage"/>
+        <h3>{{message}}</h3>
+    </div>
+</template>
+
+<script>
+import ComponentFirst from './components/componentFirst';
+
+export default {
+    name: 'App',
+    components: {
+        ComponentFirst
+    },
+    data() {
+        return {
+            message: 'Message default.'
+        }
+    },
+    methods: {
+        updateMessage(mes) {
+            this.message = mes;
+        }
+    }
+}
+</script>
+```
+ ```html
+<template>
+    <div>
+        <input
+            placeholder="Enter Text Here"
+            v-model="tempMessage"
+        />
+        <div>
+            <button @click="sendMessage">@Emit event</button>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "ComponentFirst",
+    data() {
+        return {
+            tempMessage: ''
+        }
+    },
+    methods: {
+        sendMessage() {
+            this.$emit('inputData', this.tempMessage);
+            this.tempMessage = '';
+        }
+    }
+};
+</script>
+```
+3. Event Bus
+4. Vuex
+ 
