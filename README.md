@@ -135,3 +135,5 @@ export default {
 };
 </script>
 ```
+- props chỉ được truyền một chiều từ con xuống cha – không có chiều ngược lại
+ - Vì thằng cha có thể cũng truyền data này cho nhiều thằng con nữa, mà một thằng con lại có quyền thay đổi data của cha thì không được
