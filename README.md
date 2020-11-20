@@ -201,7 +201,26 @@ export default {
 ```
 3. Event Bus
 4. Vuex
-
-#### v-model in textbox
+### Component
+#### [a component’s data option must be a function](https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function)
+- each time you use a component, a new instance of it is created
+```js
+// Define a new component called button-counter
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+```
+```html
+<div id="components-demo">
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+</div>
+```
 
  
