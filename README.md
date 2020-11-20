@@ -201,4 +201,7 @@ export default {
 ```
 3. Event Bus
 4. Vuex
+
+#### v-model in textbox
+
  
