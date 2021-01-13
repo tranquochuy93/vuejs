@@ -222,5 +222,7 @@ Vue.component('button-counter', {
   <button-counter></button-counter>
 </div>
 ```
+# Nuxt js
+### Plugin
 
  
